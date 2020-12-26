@@ -14,6 +14,8 @@ const forecast = require('./utils/forecast')
 // console.log(path.join(__dirname, '../public'))
 
 const app = express()
+//The below line is for Heroku||localhost
+const port = process.env.PORT || 3000
 
 //Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -120,6 +122,6 @@ app.get('*', (req, res) => {
 
 //development environment port 3000(optional, any port can be used)
 //Usually, in production server, port 80 is used.
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })

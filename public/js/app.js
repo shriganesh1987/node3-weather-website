@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit', (e)=> {
 //not accessible via Nodejs
 //So, code written here cannot be used in backend node cript.
 //As this code runs in only browser, not node js. Code written here is perfectly fine.
-fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+fetch('/weather?address=' + location).then((response) => {
     response.json().then((data)=> {
         //console.log(data)
         if(data.error)
